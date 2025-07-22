@@ -72,7 +72,7 @@ export default function Map() {
         if(!process.env.NEXT_PUBLIC_API_URL){
           throw new Error("API_URL não encontrada!")
         }
-        const response = await axios.get<Place[]>(`${process.env.NEXT_PUBLIC_API_URL}/places`)
+        const response = await axios.get<Place[]>(`${process.env.NEXT_PUBLIC_API_URL}/place`)
         setPlaces(response.data)
       }catch(err){
         console.log("Erro ao carregar os locais: ", err)

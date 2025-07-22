@@ -64,7 +64,7 @@ export default function PlaceForm({lat, lng}: Props) {
             // Faço a requisição
             setLoading(true)
             const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API_URL}/places`,
+                `${process.env.NEXT_PUBLIC_API_URL}/place`,
                 formData, 
                 {
                     headers: {"Content-Type": "multipart/form-data"}
