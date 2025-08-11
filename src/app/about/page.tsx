@@ -1,6 +1,7 @@
 // import NavBar from "@/components/NavBar"
 import Button   from "@/components/Button"
 import Counter from "@/components/Counter"
+import EffectCounter from "@/components/EffectCounter"
 
 export default function About(){
 
@@ -13,7 +14,9 @@ export default function About(){
             <Button label="Fechar"/>
             <Button label="Jonas"/> */}
 
-            <Counter initial={0}/>
+            {/* <Counter initial={0}/> */}
+
+            <EffectCounter/>
         </div>
     )
 }
