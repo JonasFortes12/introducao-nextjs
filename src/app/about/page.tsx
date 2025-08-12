@@ -2,6 +2,8 @@
 
 import AtvCard from "@/components/CartAtv";
 import Counter from "@/components/Counter";
+import EffectCounter from "@/components/EffectCounter";
+import Lampada from "@/components/Lampada";
 
 const CardData = [
   {
@@ -64,7 +66,10 @@ export default function About() {
 
             </div>
       <div className="flex flex-col justify-center my-[80px]">
-        <Counter ititial={0} />
+        {/* <Counter ititial={0} /> */}
+        <EffectCounter/>
+
+        <Lampada/>
       </div>
     </div>
   );
