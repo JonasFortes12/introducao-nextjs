@@ -2,6 +2,7 @@
 import Button   from "@/components/Button"
 import Counter from "@/components/Counter"
 import EffectCounter from "@/components/EffectCounter"
+import MiniDisplay from "@/components/miniDisplay"
 
 export default function About(){
 
@@ -16,7 +17,10 @@ export default function About(){
 
             {/* <Counter initial={0}/> */}
 
-            <EffectCounter/>
+            {/* <EffectCounter/> */}
+            
+            <MiniDisplay/>
+
         </div>
     )
 }
