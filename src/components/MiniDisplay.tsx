@@ -7,13 +7,48 @@ export default function MiniDisplay() {
 
     const [display, setDisplay] = useState('')
 
+    const calculate = () => {
+        if(display.includes('+')) {
+            sun()
+        } else if(display.includes('-')){
+            sub( )
+        }
+    }
+
+    const sun  = () => {
+        const values = display.split('+')
+        const result = values.reduce(
+            (acumuladora, valorAtual) => acumuladora + Number(valorAtual), 0
+        )
+        setDisplay(String(result))
+
+    }
+
+    const sub  = () => {
+        const values = display.split('-')
+        const result = values.reduce(
+            (acumuladora, valorAtual) => acumuladora - Number(valorAtual), 0
+        )
+        setDisplay(String(result))
+
+    }
+
+    const mul  = () => {
+        const values = display.split('x')
+        const result = values.reduce(
+            (acumuladora, valorAtual) => acumuladora * Number(valorAtual), 0
+        )
+        setDisplay(String(result))
+
+    }
+
 
     return(
         <div className="flex flex-col items-center m-10">
             {/* display */}
             <div className="flex justify-center items-center rounded
-            p-4 w-60 h-15 mb-5 text-center text-xl border border-gray-400">
-                {display}
+            p-4 w-60 h-15 mb-5 text-center text-xl border maxLength={2} border-gray-400">
+                {display.slice(0, 15)}
             </div>
             {/* teclado numerico */}
             <div className="grid grid-cols-3 gap-2 w-60 h-80">
@@ -70,10 +105,32 @@ export default function MiniDisplay() {
                 className="bg-gray-300 rounded p-2">9</button>
                 <button 
                 onClick={()=>{
+                    setDisplay(`${display}+`)
+                }}
+                className="bg-gray-300 rounded p-2">+</button>
+                <button 
+                onClick={()=>{
+                    setDisplay(`${display}-`)
+                }}
+                className="bg-gray-300 rounded p-2">-</button>
+                <button 
+                onClick={()=>{
+                    setDisplay(`${display}*`)
+                }}
+                className="bg-gray-300 rounded p-2">x</button>
+                <button 
+                onClick={()=>{
+                    sun()
+                    sub()
+                    mul()
+                }}
+                className="bg-gray-300 rounded p-2">=</button>
+                <button 
+                onClick={()=>{
                     setDisplay(display.slice(0, -1))
                 }}
-                className="bg-red-300 rounded p-2 span-2">
-                    apagar
+                className="bg-red-600 rounded col-start-1 col-end-4 p-2 span-2">
+                    Backspace
                 </button>
                 
 

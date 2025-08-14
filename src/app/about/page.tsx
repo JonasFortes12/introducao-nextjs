@@ -52,7 +52,7 @@ const CardData = [
 export default function About() {
   return (
     <div>
-      <div className="flex flex-row justify-center gap-8 flex-wrap my-20">
+      {/* <div className="flex flex-row justify-center gap-8 flex-wrap my-20">
                 {CardData.map((card, index) => (
                     <AtvCard 
                     key={index}
@@ -66,7 +66,7 @@ export default function About() {
             </div>
       <div className="flex flex-col justify-center my-[80px]">
         <Counter ititial={0} />
-      </div>
+      </div> */}
       <MiniDisplay/>
     </div>
   );
