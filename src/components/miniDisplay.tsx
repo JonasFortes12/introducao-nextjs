@@ -10,8 +10,18 @@ export default function MiniDisplay() {
         setDisplay(display.slice(0,-1))
     }
 
+    // string = "olá mundo"
+    // string.includes("45") -> false
 
-
+    const calculate = () => {
+        if(display.includes("+")){
+            sun()
+        } else if(display.includes("-")){
+            subtraction()
+        } else if(display.includes("*")) {
+            product()
+        }
+    }
 
     const sun = () => {
         const values = display.split("+") //"55+67" -> ["1", "2", "3", "4"]
@@ -24,11 +34,31 @@ export default function MiniDisplay() {
     }
 
     // Fução para a operação de Subtração
+    const subtraction = () => {
+        const values = display.split("-") //"55+67" -> ["1", "1"]
+        const numberValues = values.map((value)=>Number(value))// [1, 1]
+
+        const result = numberValues.reduce(
+            (acumuladora, valorAtual) => acumuladora - valorAtual
+            
+        )
+        setDisplay(String(result))
+    }
     // Fução para a operação de Multiplicação
+    const product = () => {
+        const values = display.split("*") //"55+67" -> ["1", "1"]
+        const numberValues = values.map((value)=>Number(value))// [1, 1]
+
+        const result = numberValues.reduce(
+            (acumuladora, valorAtual) => acumuladora * valorAtual
+            
+        )
+        setDisplay(String(result))
+    }
 
 
     return (
-        <div className="flex flex-col items-center mt-10">
+        <div className="flex flex-col items-center my-10">
             
             {/* display */}
             <div className="flex justify-center overflow-x-auto
@@ -76,17 +106,17 @@ export default function MiniDisplay() {
                     6
                 </button>
                 <button 
-                onClick={() =>{ setDisplay(display + "6") }}
+                onClick={() =>{ setDisplay(display + "7") }}
                 className="bg-blue-300 p-2 rounded">
                     7
                 </button>
                 <button 
-                onClick={() =>{ setDisplay(display + "6") }}
+                onClick={() =>{ setDisplay(display + "8") }}
                 className="bg-blue-300 p-2 rounded">
                     8
                 </button>
                 <button 
-                onClick={() =>{ setDisplay(display + "6") }}
+                onClick={() =>{ setDisplay(display + "9") }}
                 className="bg-blue-300 p-2 rounded">
                     9
                 </button>
@@ -99,21 +129,36 @@ export default function MiniDisplay() {
 
                 {/* Botão Soma */}
                 <button 
-                onClick={() =>{setDisplay(display+"+")}}
+                onClick={() =>{setDisplay(`${display}+`)}}
                 className="bg-green-500 p-2 rounded">
                  +
+                </button>
+
+                {/* Botão Multiplicação */}
+                <button 
+                onClick={() =>{setDisplay(`${display}*`)}}
+                className="bg-green-500 p-2 rounded">
+                 *
+                </button>
+
+                
+
+                <button 
+                onClick={() =>{calculate()}}
+                className="bg-amber-400 p-2 rounded">
+                 =
+                </button>
+
+                <button 
+                onClick={() =>{setDisplay(`${display}-`)}}
+                className="bg-green-400 p-2 rounded">
+                 -
                 </button>
 
                 <button 
                 onClick={() =>{backspace()}}
                 className="bg-violet-300 p-2 rounded col-span-2">
                  backspace
-                </button>
-
-                <button 
-                onClick={() =>{sun()}}
-                className="bg-amber-400 p-2 rounded">
-                 =
                 </button>
             </div>
 
