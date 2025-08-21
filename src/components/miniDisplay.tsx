@@ -1,12 +1,34 @@
 "use client";
+import { handleClientScriptLoad } from "next/script";
 import { useState } from "react";
 
 export default function MiniDisplay() {
   const [display, setDisplay] = useState("");
 
+
+  const handleOperatorClick = (operator: string) => {
+    //Não deixo o user digitar um operador diferente
+    // do primeiro operador que ele digitou
+    const operators = ["+", "-", "*", "/"]
+
+    const disableOperators = operators.filter((op) => op !== operator)
+    // disableOperators = ["-", "*", "/"]
+
+    // Se a tela já tem um operador diferente, não faz nada
+    const hasAnotherOperator = disableOperators.some(
+      (op) => display.includes(op)
+    )
+    if(hasAnotherOperator) return
+
+    setDisplay(display + operator)
+
+  }
+
+
+
   const backspace = () => {
     setDisplay(display.slice(0, -1));
-  };
+  };// "+" "-"
 
   // string = "olá mundo"
   // string.includes("45") -> false
@@ -186,7 +208,7 @@ export default function MiniDisplay() {
         {/* Botão Soma */}
         <button
           onClick={() => {
-            setDisplay(`${display}+`);
+            handleOperatorClick("+");
           }}
           className="bg-green-500 p-2 rounded"
         >
@@ -196,7 +218,7 @@ export default function MiniDisplay() {
         {/* Botão Multiplicação */}
         <button
           onClick={() => {
-            setDisplay(`${display}*`);
+           handleOperatorClick("*")
           }}
           className="bg-green-500 p-2 rounded"
         >
@@ -214,7 +236,7 @@ export default function MiniDisplay() {
 
         <button
           onClick={() => {
-            setDisplay(`${display}-`);
+           handleOperatorClick("-")
           }}
           className="bg-green-400 p-2 rounded"
         >
@@ -223,7 +245,7 @@ export default function MiniDisplay() {
 
         <button
           onClick={() => {
-            setDisplay(`${display}/`);
+            handleOperatorClick("/")
           }}
           className="bg-green-400 p-2 rounded"
         >
