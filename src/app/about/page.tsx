@@ -2,6 +2,8 @@
 
 import AtvCard from "@/components/CartAtv";
 import Counter from "@/components/Counter";
+import LikeButton from "@/components/LikeButton";
+import ButaoReproducao from '@/components/BotaoReproducao'
 import MiniDisplay from "@/components/MiniDisplay";
 
 const CardData = [
@@ -67,7 +69,9 @@ export default function About() {
       <div className="flex flex-col justify-center my-[80px]">
         <Counter ititial={0} />
       </div> */}
-      <MiniDisplay/>
+      {/* <MiniDisplay/> */}
+      <LikeButton/>
+      <ButaoReproducao/>
     </div>
   );
 }
