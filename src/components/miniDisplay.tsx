@@ -6,6 +6,30 @@ export default function MiniDisplay() {
 
     const [display, setDisplay] = useState("")
 
+    // const handleOperatorClick = (operator: string) => {
+    //     // Não deixo o user digitar um operador diferente
+    //     // do primeiro operador que ele digitou
+    //     const operators = ["+", "-", "*", "/"]
+
+    //     const disableOperators = operators.filter((op) => {
+    //         op !== operator
+    //     })
+    //     // disableOperators = {"-", "*", "/"}
+
+    //     // Se a tela já  tem um operador diferente, não faz nada
+    //     const hasAnotherOperator = disableOperators.some(
+    //         (op) => display.includes(op)
+    //     )
+    //     if(hasAnotherOperator) return
+
+    //     setDisplay(display + operator)
+
+    //     // Sei o operador que o usuário digitou 
+    //     // Sei quais são os operadores que existem (possíveis)
+    // }
+
+
+
     const backspace = () => {
         setDisplay(display.slice(0,-1))
     }
@@ -17,6 +41,8 @@ export default function MiniDisplay() {
           setDisplay("Erro")
         }
     }
+
+
 
     // Função para a operação de Adição 
     const sun = () => {
