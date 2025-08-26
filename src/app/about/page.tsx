@@ -3,11 +3,12 @@ import Lampada from "@/components/Lampada";
 import MiniDisplay from "@/components/miniDisplay";
 import LikeButton from "@/components/LikeButton2";
 import MusicReprodution from "@/components/BotaoReproducao";
+import ShoppingList from "@/components/ListaDeCompras";
 
 export default function HomePage() {
   return (
     <div className="flex justify-center items-center h-screen w-full">
-      <MusicReprodution/>
+      <ShoppingList/>
       
     </div>
   );
