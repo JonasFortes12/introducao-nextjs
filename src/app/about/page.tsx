@@ -5,6 +5,8 @@ import Counter from "@/components/Counter";
 import LikeButton from "@/components/LikeButton";
 import ButaoReproducao from '@/components/BotaoReproducao'
 import MiniDisplay from "@/components/MiniDisplay";
+import ListaDeCompras from "@/components/ListaDeCompras";
+
 
 const CardData = [
   {
@@ -65,13 +67,38 @@ export default function About() {
                     />
                 ))}
 
-            </div>
-      <div className="flex flex-col justify-center my-[80px]">
+            </div> */}
+      {/* <div className="flex flex-col justify-center my-[80px]">
         <Counter ititial={0} />
       </div> */}
       {/* <MiniDisplay/> */}
-      <LikeButton/>
-      <ButaoReproducao/>
+      {/* <LikeButton/>
+      <ButaoReproducao/> */}
+      <ListaDeCompras
+        compras={[
+          {
+            item: "Maçã",
+            comprado: false
+          },
+          {
+            item: "Banana",
+            comprado: false
+          },
+          {
+            item: "Ketchup",
+            comprado: false
+          },
+          {
+            item: "Doritos",
+            comprado: false
+          },
+          {
+            item: "Aveia",
+            comprado: false
+          }
+        ]}
+      />
+
     </div>
   );
 }
