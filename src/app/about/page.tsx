@@ -3,6 +3,7 @@ import Button   from "@/components/Button"
 import Counter from "@/components/Counter"
 import EffectCounter from "@/components/EffectCounter"
 import LikeButton from "@/components/LikeButton"
+import ListaCompras from "@/components/ListaCompras"
 import MiniDisplay from "@/components/miniDisplay"
 
 export default function About(){
@@ -22,7 +23,9 @@ export default function About(){
             
             {/* <MiniDisplay/> */}
 
-            <LikeButton/>
+            {/* <LikeButton/> */}
+
+            <ListaCompras/>
 
         </div>
     )
