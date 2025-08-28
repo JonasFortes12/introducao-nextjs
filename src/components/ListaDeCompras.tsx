@@ -31,14 +31,14 @@ export default function ListaDeCompras({compras}: ListaProps) {
                 <h1 className="text-4xl mb-2">Lista de Compras</h1>
                 <ul>
                     {lista.map((compra, index)=>(
-                        <div key={index} className="flex space-x-1">
+                        <li key={index} className="flex space-x-1">
                             <input 
                             type="checkbox" 
                             onChange={()=>{ChangeLista(index)}} 
                             // checked={compra.comprado}
                             />
-                            <li className={`${compra.comprado ? "line-through text-gray-400" : "" }`}>{compra.item}</li>
-                        </div>
+                            <span className={`${compra.comprado ? "line-through text-gray-400" : "" }`}>{compra.item}</span>
+                        </li>
                     ))}
                 </ul>
             </div>
