@@ -8,6 +8,8 @@ interface cardPorps {
 export function Card({ title, description, icon }: cardPorps) {
     return (
 
+
+
         <div className="
         bg-violet-200 
         p-6 rounded-xl 
@@ -21,5 +23,6 @@ export function Card({ title, description, icon }: cardPorps) {
             <p className="text-gray-600">{description}</p>
 
         </div>
+        
     )
 }
