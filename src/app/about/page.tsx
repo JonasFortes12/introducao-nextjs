@@ -74,7 +74,7 @@ export default function About() {
       {/* <MiniDisplay/> */}
       {/* <LikeButton/>
       <ButaoReproducao/> */}
-      <ListaDeCompras
+      {/* <ListaDeCompras
         compras={[
           {
             item: "Maçã",
@@ -97,7 +97,7 @@ export default function About() {
             comprado: false
           }
         ]}
-      />
+      /> */}
 
     </div>
   );
