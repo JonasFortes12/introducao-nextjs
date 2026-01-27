@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 
 
 export default function Home() {
+
   return (
     <div className=" ">
 
@@ -16,6 +17,7 @@ export default function Home() {
           { label: 'Produtos', href: '/product' }
         ]
       } />
+
 
       <section className="bg-white py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -37,7 +39,7 @@ export default function Home() {
           <Card
             title="TypeScript Integrado"
             description="Tipagem estática para um código mais seguro."
-            icon="🔒" />
+            icon="🔒" /> 
         </div>
 
       </section>
